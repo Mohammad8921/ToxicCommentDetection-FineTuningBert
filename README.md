@@ -9,8 +9,8 @@ Sequence Learning is performed based on recurrent neyarl network and feature ext
   - BERT+LSTM-CNN
   - BERT+CNN-LSTM
 2. Feature Extraction
-   - BERT+CNN-1D
-   - BERT+2CNN-1D
+  - BERT+CNN-1D
+  - BERT+2CNN-1D
 ## Realted works ##
 
 ## Models ##
