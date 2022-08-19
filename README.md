@@ -3,6 +3,7 @@
 With the spread of social media among people, one of the main concerns today is to keep this platform peaceful and safe for exchanging information and sharing opinions. One of the factors of disrupting the peace of socail media is posting and reading insulting, racist nad threatening comments. We call such comments toxic. Our need is to identify these toxic commnets and orevent them from being shared. Since classic AI models are not accurate in this problem, it is necessary to use machine learning for addressing this natural language processing task. In this paper, we fine-tune models based on BERT to detecttoxic comments. The models that were bulit conceptually can be divided into two categories: 
 1. Sequence Learning
 2. Feature Extraction
+
 Sequence Learning is performed based on recurrent neyarl network and feature extraction is done by 1-dimensional convolutional neural network (CNN). In sequence learning models we decide to enhance the output of BERT by LSTM network and to be nmore accurate, we add a CNN layer to them, But in Feature Extraction models, we use just CNN to extract which phrases are relevent or not from BERT representation of the corresponding sentence. We propose two models based on Sequence Learning and two models based on Feature Extraction. The list of models is below:
 1. Sequence Learning
   - BERT+LSTM-CNN
