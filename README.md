@@ -6,11 +6,11 @@ With the spread of social media among people, one of the main concerns today is 
 
 Sequence Learning is performed based on recurrent neyarl network and feature extraction is done by 1-dimensional convolutional neural network (CNN). In sequence learning models we decide to enhance the output of BERT by LSTM network and to be nmore accurate, we add a CNN layer to them, But in Feature Extraction models, we use just CNN to extract which phrases are relevent or not from BERT representation of the corresponding sentence. We propose two models based on Sequence Learning and two models based on Feature Extraction. The list of models is below:
 1. Sequence Learning
-  - BERT+LSTM-CNN
-  - BERT+CNN-LSTM
+   - BERT+LSTM-CNN
+   - BERT+CNN-LSTM
 2. Feature Extraction
-  - BERT+CNN-1D
-  - BERT+2CNN-1D
+   - BERT+CNN-1D
+   - BERT+2CNN-1D
 ## Realted works ##
 
 ## Models ##
