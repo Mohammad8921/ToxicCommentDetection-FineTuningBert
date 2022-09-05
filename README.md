@@ -11,6 +11,7 @@ Sequence Learning is performed based on recurrent neyarl network and feature ext
 2. Feature Extraction
    - BERT+CNN-1D
    - BERT+2CNN-1D
+
 The best model was BERT+2CNN-1D with the accuaracy 0.94 and f1-score 0.93. All models will be explained further. 
 ## Realted works ##
 
