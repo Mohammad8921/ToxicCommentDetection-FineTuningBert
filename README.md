@@ -16,7 +16,7 @@ Sequence Learning is performed based on recurrent neural network and feature ext
 The best model was BERT+2CNN-1D with the accuaracy 0.94 and f1-score 0.93. All models will be explained further. 
 ## Realted works ##
 
-## Models ##
+## Methodology ##
 In this project, I propose four strategies to fine tune BERT Model to detect toxic comments in social media. I did not use the coresponding output of [CLS] token and just used representation of the words in related comment that BERT gives us (last hidden layer). In all models, convolution layers is 1 dimensional and output dim of LSTM layers is the same as input dim. Number of kernels of CNN layers is 64 whereever did not mentioned. I set maximum length of sentecne to 36 for in tokenization phase.
 
 ### Model 1: BERT+LSTM-CNN ###
