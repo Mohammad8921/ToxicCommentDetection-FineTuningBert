@@ -18,7 +18,7 @@ The best model was BERT+2CNN-1D with the accuaracy 0.94 and f1-score 0.93. All m
 In [1], CNN was used to detect toxic comments. Their word embedding was word2vec(skip-gram). Another model was proposed bt [2] which is based on LSTM and word represenation SpaCy. The accuracy of the model is 0.95, but they did not publish the dataset that they used for the task. Besides, we cannot be sure about the generalization of the model. Because they did not use transfer learning and pretrained models. In [3], LSTM and CNN was used to detect toxic phrases. Their word representation was the output of last hidden layer of BERT (they did not fine-tune BERT.). the accuracy of both models was around 0.91 and their data was collected from Twitter corpus.
 BERT+LSTM                  |  BERT+CNN
 :-------------------------:|:-------------------------:
-<img src="./Pictures/bert-LSTM.png" width=300 height=400/>  |  <img src="./Pictures/bert-cnn.png" width=300 height=400/>
+<img src="./Pictures/bert-lstm.png" width=300 height=400/>  |  <img src="./Pictures/bert-cnn.png" width=400 height=400/>
 
 ## Methodology ##
 In this project, I propose four strategies to fine tune BERT Model to detect toxic comments in social media. I did not use the coresponding output of [CLS] token and just used representation of the words in related comment that BERT gives us (last hidden layer). In all models, convolution layers is 1 dimensional and output dim of LSTM layers is the same as input dim. Number of kernels of CNN layers is 64 whereever did not mentioned. I set maximum length of sentecne to 36 for in tokenization phase.
