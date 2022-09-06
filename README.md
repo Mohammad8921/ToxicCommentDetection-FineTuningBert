@@ -23,7 +23,7 @@ In this project, I propose four strategies to fine tune BERT Model to detect tox
 ### Model 1: BERT+LSTM-CNN ###
 In this model, I give the last hidden layar of BERT to a LSTM and then a 1D-CNN layer. Detecting some toxic comments need sequence learning and some of them just need feature extraction. I propose this and BERT+CNN-LSTM (model 2) models to find both. Reuslt of this model is better than BERT+CNN-LSTM.
 <p align="center">
-<img src="./Pictures/BERT-LSTM-CNN.png" height=500 width=400 title="caption" class="caption"/>
+<img src="./Pictures/BERT-LSTM-CNN.png" height=500 width=400/>
  </p>
  
 ### Model 2: BERT+CNN-LSTM ###
