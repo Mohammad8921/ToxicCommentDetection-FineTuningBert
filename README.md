@@ -14,7 +14,7 @@ Sequence Learning is performed based on recurrent neural network and feature ext
    - BERT+2CNN-1D
 
 The best model was BERT+2CNN-1D with the accuaracy 0.94 and f1-score 0.93. All models will be explained further. 
-## Realted works ##
+## Related works ##
 In [1], CNN was used to detect toxic comments. Their word embedding was word2vec(skip-gram). Another model was proposed bt [2] which is based on LSTM and word represenation SpaCy. The accuracy of the model is 0.95, but they did not publish the dataset that they used for the task. Besides, we cannot be sure about the generalization of the model. Because they did not use transfer learning and pretrained models. In [3], LSTM and CNN was used to detect toxic phrases. Their word representation was the output of last hidden layer of BERT (they did not fine-tune BERT.). the accuracy of both models was around 0.91 and their data was collected from Twitter corpus.
 BERT+LSTM                  |  BERT+CNN
 :-------------------------:|:-------------------------:
