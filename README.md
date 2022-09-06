@@ -49,6 +49,7 @@ As you know, I just used last hidden layer of BERT (not all layers) and it means
 [1] Georgakopoulos, Spiros V., et al. ”Convolutional neural networks for toxic comment
 classification.” Proceedings of the 10th hellenic conference on artificial intelligence.
 2018.
+
 [2] Dubey, Krishna, et al. ”Toxic Comment Detection using LSTM.” 2020 Third International
 Conference on Advances in Electronics, Computers and Communications
 (ICAECC). IEEE, 2020.
