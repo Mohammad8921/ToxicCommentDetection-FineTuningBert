@@ -58,3 +58,5 @@ Conference on Advances in Electronics, Computers and Communications
 for automatic detection of toxic speech.” 2020 International Multi-
 Conference on:“Organization of Knowledge and Advanced Technologies”(OCTA).
 IEEE, 2020.
+
+[4] Mozafari, Marzieh, Reza Farahbakhsh, and Noel Crespi. "A BERT-based transfer learning approach for hate speech detection in online social media." International Conference on Complex Networks and Their Applications. Springer, Cham, 2019.
