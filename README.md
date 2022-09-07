@@ -49,6 +49,10 @@ As you know, I just used last hidden layer of BERT (not all layers) and it means
 <img src="./Pictures/BERT-2CNN-1D.png" height=500 width=400/>
  </p>
 
+## Results ##
+<p align="center">
+<img src="./Pictures/Results.png height=400 width=500" />
+</p>
 ## References ##
 [1] Georgakopoulos, Spiros V., et al. ”Convolutional neural networks for toxic comment
 classification.” Proceedings of the 10th hellenic conference on artificial intelligence.
