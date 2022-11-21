@@ -49,6 +49,12 @@ As you know, I just used last hidden layer of BERT (not all layers) and it means
 <img src="./Pictures/BERT-2CNN-1D.png" height=500 width=400/>
  </p>
 
+## Results ##
+BERT+CNN model used 6 GB memory to evaluate 4,600 sentences, But BERT+2CNN-1D just needs 2 GB. Because of good memory complexity of this model, I trained the model with maximum length of 64 to be more accurate (average length of sentences in the dataset is 67). In this case, usage of the model was 3 GB.
+<p align="center">
+<img src="./Pictures/Results.png" height=400 width=600 />
+</p>
+
 ## References ##
 [1] Georgakopoulos, Spiros V., et al. ”Convolutional neural networks for toxic comment
 classification.” Proceedings of the 10th hellenic conference on artificial intelligence.
