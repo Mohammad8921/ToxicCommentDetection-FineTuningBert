@@ -1,5 +1,5 @@
-!pip install transformers==3.0.0
-!pip install emoji
+#pip install transformers==3.0.0
+#pip install emoji
 
 import gc
 import torch
@@ -61,7 +61,7 @@ class BERT_LSTM(nn.Module):
   def __init__(self):
     super(BERT_LSTM, self).__init__()
     self.bert = BertModel.from_pretrained('bert-base-uncased')
-    self.lstm = nn.LSTM(768, 768, 1)
+    self.lstm = nn.LSTM(768, 768, batch_first=True)
     self.relu = nn.ReLU()
     self.dropout = nn.Dropout(0.1)
     self.dropout2 = nn.Dropout(0.3) # For fully connected layer
@@ -85,7 +85,7 @@ class BERT_LSTM_CNN(nn.Module):
   def __init__(self):
     super(BERT_LSTM_CNN, self).__init__()
     self.bert = BertModel.from_pretrained('bert-base-uncased')
-    self.lstm = nn.LSTM(768, 768, 1)
+    self.lstm = nn.LSTM(768, 768, batch_first=True)
     self.conv = nn.Conv1d(in_channels=768, out_channels=64, kernel_size=3, padding="same")
     self.pool = nn.MaxPool1d(kernel_size=3, stride=1)
     self.relu = nn.ReLU()
@@ -112,7 +112,7 @@ class BERT_CNN_LSTM(nn.Module):
   def __init__(self):
     super(BERT_CNN_LSTM, self).__init__()
     self.bert = BertModel.from_pretrained('bert-base-uncased')
-    self.lstm = nn.LSTM(64, 64, 1)
+    self.lstm = nn.LSTM(64, 64, batch_first=True)
     self.conv = nn.Conv1d(in_channels=768, out_channels=64, kernel_size=3, padding="same")
     self.pool = nn.MaxPool1d(kernel_size=3, stride=1)
     self.relu = nn.ReLU()
