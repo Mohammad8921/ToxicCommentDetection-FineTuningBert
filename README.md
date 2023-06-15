@@ -1,6 +1,8 @@
-# Toxic Comment Detection Using Transfer Learning Based on BERT #
-## Abstract ##
-With the spread of social media among people, one of the main concerns today is to keep this platform peaceful and safe for exchanging information and sharing opinions. One of the factors of disrupting the peace of socail media is posting and reading insulting, racist nad threatening comments. We call such comments toxic. Our need is to identify these toxic commnets and orevent them from being shared. Since classic AI models are not accurate in this problem, it is necessary to use machine learning for addressing this natural language processing task. In this paper, we fine-tuned models based on BERT to detect toxic comments. The models that were bulit conceptually can be divided into two categories: 
+# Toxic Comment Detection Using Transfer Learning Based on BERT
+
+## Abstract
+
+With the spread of social media among people, one of the main concerns today is to keep this platform peaceful and safe for exchanging information and sharing opinions. One of the factors of disrupting the peace of socail media is posting and reading insulting, racist nad threatening comments. We call such comments toxic. Our need is to identify these toxic commnets and orevent them from being shared. Since classic AI models are not accurate in this problem, it is necessary to use machine learning for addressing this natural language processing task. In this paper, we fine-tuned models based on BERT to detect toxic comments. The models that were bulit conceptually can be divided into two categories:
 
 1. Sequence Learning from BERT Represenations of input words
 2. Feature Extraction from BERT Represenations of input words
@@ -14,19 +16,24 @@ Sequence Learning is performed based on recurrent neural network and feature ext
    - BERT+CNN-1D
    - BERT+2CNN-1D
 
-The best model is BERT+2CNN-1D with the accuaracy 0.94 and f1-score 0.93. All models will be explained further. 
-## Related works ##
-In [1], CNN was used to detect toxic comments. Their word embedding was word2vec(skip-gram). Another model was proposed bt [2] which is based on LSTM and word represenation SpaCy. The accuracy of the model is 0.95, but they did not publish the dataset that they used for the task. Besides, we cannot be sure about the generalization of the model. Because they did not use transfer learning and pretrained models. In [3], LSTM and CNN was used to detect toxic phrases. Their word representation was the output of last hidden layer of BERT (they did not fine-tune BERT.). the accuracy of both models was around 0.91 and their data was collected from Twitter corpus. 
-Another model was proposed in [4] which add a LSTM layer to BERT. They called it BERT+LSTM. In this paper, also a model was introduced using all layers of BERT and create a 3D tensor. After that, they perform a CNN on this. The name of this modelc is BERT+CNN. Performance of BERT+CNN was better that BERT+LSTM. However, It has high memory complexity. I propose two alternatives to BERT+LSTM and two models being alternatives to BERT+CNN to reduce memory complexity and keep its accuracy the same. 
-BERT+LSTM                  |  BERT+CNN
-:-------------------------:|:-------------------------:
-<img src="./Pictures/bert-lstm.png" width=350 height=400/>  |  <img src="./Pictures/bert-cnn.png" width=400 height=400/>
+The best model is BERT+2CNN-1D with the accuaracy 0.94 and f1-score 0.93. All models will be explained further.
 
-## Methodology ##
+## Related works
+
+In the work of [1], CNN was used to detect toxic comments. Their word embedding was word2vec (skip-gram). Another model was proposed in the work of [2] which is based on LSTM and word represenation SpaCy. The accuracy of the model is 0.95, but they did not publish the dataset that they used for the task. Besides, we cannot be sure about the generalization of the model. Because they did not use transfer learning from pretrained models. In [3], LSTM and CNN was used to detect toxic phrases. Their word representation was the output of last hidden layer of BERT (without fine-tuning). The accuracy of both models was around 0.91 and their dataset was collected from Twitter corpus.
+Another model was proposed in [4] which add a LSTM layer to BERT. They called it BERT+LSTM. In this paper, also a model was introduced using all layers of BERT and create a 3D tensor. After that, they perform a CNN on this. The name of this modelc is BERT+CNN. Performance of BERT+CNN was better that BERT+LSTM. However, It has high memory complexity. I propose two alternatives to BERT+LSTM and two alternatives to BERT+CNN to reduce memory complexity and keep its accuracy the same.
+BERT+LSTM | BERT+CNN
+:-------------------------:|:-------------------------:
+<img src="./Pictures/bert-lstm.png" width=350 height=400/> | <img src="./Pictures/bert-cnn.png" width=400 height=400/>
+
+## Methodology
+
 In this project, I propose four strategies to fine tune BERT Model to detect toxic comments in social media. I did not use the coresponding output of [CLS] token and just used representation of the words in related comment that BERT gives us (last hidden layer). In all models, convolution layers is 1 dimensional and output dim of LSTM layers is the same as input dim. Number of kernels of CNN layers is 64 whereever did not mentioned. I set maximum length of sentecne to 36 for in tokenization phase.
 
-### Model 1: BERT+LSTM-CNN ###
+### Model 1: BERT+LSTM-CNN
+
 In this model, I give the last hidden layar of BERT to a LSTM and then a 1D-CNN layer. Detecting some toxic comments need sequence learning and some of them just need feature extraction. I propose this and BERT+CNN-LSTM (model 2) models to find both. Reuslt of this model is better than BERT+CNN-LSTM.
+
 <p align="center">
 <img src="./Pictures/BERT-LSTM-CNN.png" height=500 width=400/>
  </p>
@@ -50,16 +57,18 @@ As you know, I just used last hidden layer of BERT (not all layers) and it means
 <img src="./Pictures/BERT-2CNN-1D.png" height=500 width=400/>
  </p>
 
-## Results ##
+## Results
+
 BERT+CNN model used 6 GB memory to evaluate 4,600 sentences, But BERT+2CNN-1D just needs 2 GB. Because of good memory complexity of this model, I trained the model with maximum length of 64 to be more accurate (average length of sentences in the dataset is 67). In this case, usage of the model was 3 GB.
+
 <p align="center">
 <img src="./Pictures/Results.png" height=400 width=600 />
 </p>
 
-## References ##
+## References
+
 [1] Georgakopoulos, Spiros V., et al. ”Convolutional neural networks for toxic comment
-classification.” Proceedings of the 10th hellenic conference on artificial intelligence.
-2018.
+classification.” Proceedings of the 10th hellenic conference on artificial intelligence. 2018.
 
 [2] Dubey, Krishna, et al. ”Toxic Comment Detection using LSTM.” 2020 Third International
 Conference on Advances in Electronics, Computers and Communications
