@@ -56,6 +56,8 @@ This model gives the last hidden layer of BERT to CNN for feature extraction. we
 <img src="./Pictures/BERT-2CNN-1D.png" height=500 width=400/>
  </p>
 
+## Dataset
+To assess the models, I chose a multi-labeled dataset gathered by [Conversation AI](https://conversationai.github.io/) team. The curpus has 159,571 comments with the average length of 67. The labels are toxic, severe_toxic, obscene, threat, insult, and identity_hate. The OR operation is used to change the task to binary classification. By doing this, the ratio of the number of positive examples to negative examples is 0.9. So, I sample twice as many toxic comments from the set of negative non-toxic comments. 
 ## Results
 
 BERT+CNN model used 6 GB memory to evaluate 4,600 sentences, But BERT+2CNN-1D just needs 2 GB. Because of the good memory complexity of this model, I trained the model with a maximum length of 64 to be more accurate (the average length of sentences in the dataset is 67). In this case, its memory usage was 3 GB.
