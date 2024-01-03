@@ -51,14 +51,14 @@ This model gives the last hidden layer of BERT to CNN for feature extraction. we
  </p>
  
 ### Model 4: BERT+2CNN-1D ###
-As you know, I just used last hidden layer of BERT (not all layers) and it means we need to more explore this embedding matrix to figure out what comment is toxic or not. for this reason I propose model 4, in which pooling layer of first CNN layer do not work on whole of the corresponding sequence. It works with kernel size. With the help of this technique after one CNN layer we have a matrix and can apply a CNN on it again. 
+ In this architecture, the pooling layer of the first CNN layer works with a kernel and does not perform maximum pooling on the whole of the input sequence. works with kernel size. With the help of this technique after one CNN layer, we have a matrix and can apply a CNN on it again. 
 <p align="center">
 <img src="./Pictures/BERT-2CNN-1D.png" height=500 width=400/>
  </p>
 
 ## Results
 
-BERT+CNN model used 6 GB memory to evaluate 4,600 sentences, But BERT+2CNN-1D just needs 2 GB. Because of good memory complexity of this model, I trained the model with maximum length of 64 to be more accurate (average length of sentences in the dataset is 67). In this case, usage of the model was 3 GB.
+BERT+CNN model used 6 GB memory to evaluate 4,600 sentences, But BERT+2CNN-1D just needs 2 GB. Because of the good memory complexity of this model, I trained the model with a maximum length of 64 to be more accurate (the average length of sentences in the dataset is 67). In this case, its memory usage was 3 GB.
 
 <p align="center">
 <img src="./Pictures/Results.png" height=400 width=600 />
