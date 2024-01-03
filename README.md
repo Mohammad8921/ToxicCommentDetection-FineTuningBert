@@ -2,12 +2,12 @@
 
 ## Abstract
 
-With the spread of social media among people, one of the main concerns today is to keep this platform peaceful and safe for exchanging information and sharing opinions. One of the factors of disrupting the peace of socail media is posting and reading insulting, racist nad threatening comments. We call such comments toxic. Our need is to identify these toxic commnets and orevent them from being shared. Since classic AI models are not accurate in this problem, it is necessary to use machine learning for addressing this natural language processing task. In this paper, we fine-tuned models based on BERT to detect toxic comments. The models that were bulit conceptually can be divided into two categories:
+With the spread of social media among people, one of the main concerns today is to keep this platform peaceful and safe for exchanging information and sharing opinions. One of the factors disrupting the peace of social media is posting and reading insulting, racist, and threatening comments. We call such comments toxic. Our need is to identify these toxic comments and prevent them from being shared. Since classic AI models are not accurate in this problem, it is necessary to use machine learning to address this natural language processing task. In this paper, we fine-tuned models based on BERT to detect toxic comments. The models that were built conceptually can be divided into two categories:
 
-1. Sequence Learning from BERT Represenations of input words
-2. Feature Extraction from BERT Represenations of input words
+1. Sequence Learning from BERT Representations of input words
+2. Feature Extraction from BERT Representations of input words
 
-Sequence Learning is performed based on recurrent neural network and feature extraction is done by 1-dimensional convolutional neural network (CNN). In sequence learning models we decided to enhance the output of BERT by LSTM network and to be more accurate, we added a CNN layer to them, But in Feature Extraction models, we used just CNN to extract which phrases are relevent or not from BERT representation of the corresponding sentence. We proposed two models based on Sequence Learning and two models based on Feature Extraction. The list of models is below:
+Sequence Learning is performed based on recurrent neural networks and feature extraction is done by a one-dimensional convolutional neural network (CNN). In sequence learning models we decided to enhance the output of BERT by LSTM network and to be more accurate, we added a CNN layer to them, But in Feature Extraction models, we used just CNN to extract which phrases are relevant or not from BERT representation of the corresponding sentence. We proposed two models based on Sequence Learning and two models based on Feature Extraction. The list of models is below:
 
 1. Sequence Learning
    - BERT+LSTM-CNN
@@ -16,12 +16,12 @@ Sequence Learning is performed based on recurrent neural network and feature ext
    - BERT+CNN-1D
    - BERT+2CNN-1D
 
-The best model is BERT+2CNN-1D with the accuaracy 0.94 and f1-score 0.93. All models will be explained further.
+The best model is BERT+2CNN-1D with an accuracy and f1-score of 0.94 and 0.93 respectively. All models will be explained further.
 
-## Related works
+## Related Work
 
-In the work of [1], CNN was used to detect toxic comments. Their word embedding was word2vec (skip-gram). Another model was proposed in the work of [2] which is based on LSTM and word represenation SpaCy. The accuracy of the model is 0.95, but they did not publish the dataset that they used for the task. Besides, we cannot be sure about the generalization of the model. Because they did not use transfer learning from pretrained models. In [3], LSTM and CNN was used to detect toxic phrases. Their word representation was the output of last hidden layer of BERT (without fine-tuning). The accuracy of both models was around 0.91 and their dataset was collected from Twitter corpus.
-Another model was proposed in [4] which add a LSTM layer to BERT. They called it BERT+LSTM. In this paper, also a model was introduced using all layers of BERT and create a 3D tensor. After that, they perform a CNN on this. The name of this modelc is BERT+CNN. Performance of BERT+CNN was better that BERT+LSTM. However, It has high memory complexity. I propose two alternatives to BERT+LSTM and two alternatives to BERT+CNN to reduce memory complexity and keep its accuracy the same.
+In the work of [1], CNN was used to detect toxic comments. Their word embedding was word2vec (skip-gram). Another model was proposed in the work of [2] which is based on LSTM and word representation SpaCy. The accuracy of the model is 0.95, but they did not publish the dataset they used. Besides, we cannot be sure about the generalization of the model, because the size of their dataset was not large and they did not use transfer learning from pre-trained models. In [3], LSTM and CNN were used to detect toxic phrases. Their word representation was the output of the last hidden layer of BERT (without fine-tuning). The accuracy of both models was around 0.91 and their dataset was collected from Twitter corpus.
+Another model was proposed in [4] which adds an LSTM layer to BERT called BERT+LSTM. Furthermore, in the aforementioned paper, a model called  BERT+CNN was introduced that uses all layers of BERT and creates a 3D tensor which is the input of a CNN. The performance of BERT+CNN was better than BERT+LSTM. However, it has high memory complexity. I propose two alternatives to BERT+LSTM and two alternatives to BERT+CNN to reduce memory complexity and keep its accuracy the same.
 BERT+LSTM | BERT+CNN
 :-------------------------:|:-------------------------:
 <img src="./Pictures/bert-lstm.png" width=350 height=400/> | <img src="./Pictures/bert-cnn.png" width=400 height=400/>
