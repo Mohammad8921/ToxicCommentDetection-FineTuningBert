@@ -28,25 +28,24 @@ BERT+LSTM | BERT+CNN
 
 ## Methodology
 
-In this project, I propose four strategies to fine tune BERT Model to detect toxic comments in social media. I did not use the coresponding output of [CLS] token and just used representation of the words in related comment that BERT gives us (last hidden layer). In all models, convolution layers is 1 dimensional and output dim of LSTM layers is the same as input dim. Number of kernels of CNN layers is 64 whereever did not mentioned. I set maximum length of sentecne to 36 for in tokenization phase.
+In this project, I propose four strategies to fine-tune the BERT model to detect toxic comments in social media. I did not use the corresponding output of the [CLS] token and just used representations of the given words i.e. the output of the last hidden layer of BERT. In all models, convolution layers are one-dimensional and the output dimension of LSTM layers is the same as the input. The number of kernels in CNNs is 64 whereever was not mentioned. I set the maximum length of sentences to 36 in the tokenization phase.
 
 ### Model 1: BERT+LSTM-CNN
 
-In this model, I give the last hidden layar of BERT to a LSTM and then a 1D-CNN layer. Detecting some toxic comments need sequence learning and some of them just need feature extraction. I propose this and BERT+CNN-LSTM (model 2) models to find both. Reuslt of this model is better than BERT+CNN-LSTM.
+Detecting some toxic comments needs sequence learning and some of them just need feature extraction. In this model, I give the last hidden layer of BERT to an LSTM and then a 1D-CNN layer.  I propose this and BERT+CNN-LSTM models to find both. the result of this model is better than BERT+CNN-LSTM.
 
 <p align="center">
 <img src="./Pictures/BERT-LSTM-CNN.png" height=500 width=400/>
  </p>
  
 ### Model 2: BERT+CNN-LSTM ###
-The motivation of this model is the same as model 1, But instead of that, sequence learning by LSTM starts after feature extraction. 
+The motivation of this model is the same as model 1, but instead of that, sequence learning by LSTM starts after feature extraction. 
 <p align="center">
 <img src="./Pictures/BERT-CNN-LSTM.png" height=500 width=400/>
  </p>
  
 ### Model 3: BERT+CNN-1D ###
-This model gives the last hidden layer of BERT to CNN for feature extraction. we know to detect almost toxic comments, we just need feature extraction, but BERT represenation of words in lexicon-semantic vector space can seperate toxic words(phrases) from normal words and these embeddings can help CNN to extracing the features. 
-The motivation of proposing this model is the same as BERT+CNN in Related Works section using representation of all layers of BERT and this cause a lot of memory usage. 
+This model gives the last hidden layer of BERT to CNN for feature extraction. we know to detect almost toxic comments, we just need feature extraction, but BERT representation of words in lexicon-semantic vector space can separate toxic words(phrases) from normal words and these embeddings can help CNN to extract the features. 
 <p align="center">
 <img src="./Pictures/BERT-CNN-1D.png" height=500 width=400/>
  </p>
