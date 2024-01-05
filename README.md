@@ -16,7 +16,7 @@ Sequence Learning is performed based on recurrent neural networks and feature ex
    - BERT+CNN-1D
    - BERT+2CNN-1D
 
-The best model is BERT+2CNN-1D with Accuracy and F1-score of 0.94 and 0.93 respectively. All models will be explained further.
+The best model is BERT+2CNN-1D with Accuracy and F1-score of 0.94 and 0.93 respectively.
 
 ## Related Work
 
