@@ -2,12 +2,12 @@
 
 ## Abstract
 
-With the spread of social media among people, one of the main concerns today is to keep this platform peaceful and safe for exchanging information and sharing opinions. One of the factors disrupting the peace of social media is posting and reading insulting, racist, and threatening comments. We call such comments toxic. Our need is to identify these toxic comments and prevent them from being shared. Since classic AI models are not accurate in this problem, it is necessary to use machine learning to address this natural language processing task. In this paper, we fine-tuned models based on BERT to detect toxic comments. The models that were built conceptually can be divided into two categories:
+With the spread of social media among people, one of the main concerns today is to keep this platform peaceful and safe for exchanging information and sharing opinions. One of the factors disrupting the peace of social media is posting and reading insulting, racist, and threatening comments. We call such comments toxic. Our need is to identify these toxic comments and prevent them from being shared. Since classic AI models are not accurate in this problem, it is necessary to use machine learning to address this natural language processing task. In this paper, the proposed methods conceptually can be divided into two categories:
 
 1. Sequence Learning from BERT Representations of input words
 2. Feature Extraction from BERT Representations of input words
 
-Sequence Learning is performed based on recurrent neural networks and feature extraction is done by a one-dimensional convolutional neural network (CNN). In sequence learning models we decided to enhance the output of BERT by LSTM network and to be more accurate, we added a CNN layer to them, But in Feature Extraction models, we used just CNN to extract which phrases are relevant or not from BERT representation of the corresponding sentence. We proposed two models based on Sequence Learning and two models based on Feature Extraction. The list of models is below:
+Sequence Learning is performed based on recurrent neural networks and feature extraction is done by a one-dimensional convolutional neural network (CNN). In sequence learning models we decided to enhance the output of BERT by LSTM network and to be more accurate, we added a CNN layer to them, But in Feature Extraction models, we used just CNN to extract which phrases are relevant or not from BERT representation of the corresponding sentence. Four strategies to fine-tune BERT are listed below:
 
 1. Sequence Learning
    - BERT+LSTM-CNN
