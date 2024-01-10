@@ -63,7 +63,7 @@ To assess the models, I chose a multi-labeled dataset gathered by the [Conversat
 BERT+CNN model used 6GB memory to evaluate 4,600 sentences, But BERT+2CNN-1D just needs 2GB. Because of the good memory complexity of this model, I trained the model with a maximum length of 64 to be more accurate (the average length of sentences in the dataset is 67). In this case, its memory usage was 3GB.
 
 <p align="center">
-<img src="./Pictures/Results.png" height=637 width=1203 />
+<img src="./Pictures/Results.png" height=300 width=600 />
 </p>
 
 ## References
