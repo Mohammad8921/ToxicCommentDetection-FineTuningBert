@@ -7,7 +7,7 @@ With the spread of social media among people, one of the main concerns today is 
 1. Sequence Learning from BERT Representations of input words
 2. Feature Extraction from BERT Representations of input words
 
-Sequence Learning is performed based on recurrent neural networks and feature extraction is done by a one-dimensional convolutional neural network (CNN). In sequence learning models I decided to enhance the output of BERT by LSTM network and to be more accurate, I added a CNN layer to them, but in feature extraction models, I used just CNN to extract which phrases are relevant or not from BERT representation of the corresponding sentence. Four strategies to fine-tune BERT are listed below:
+Sequence Learning is performed based on recurrent neural networks (RNNs) and feature extraction is done by a one-dimensional convolutional neural network (CNN). In sequence learning models I decided to enhance the output of BERT by LSTM network and to be more accurate, I added a CNN layer to them, but in feature extraction models, I used just CNN to extract which phrases are relevant or not from BERT representation of the corresponding sentence. Four strategies to fine-tune BERT are listed below:
 
 1. Sequence Learning
    - BERT+LSTM-CNN
