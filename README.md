@@ -2,12 +2,12 @@
 
 ## Abstract
 
-With the spread of social media among people, one of the main concerns today is to keep this platform peaceful and safe for exchanging information and sharing opinions. One of the factors disrupting the peace of social media is posting and reading insulting, racist, and threatening comments. We call such comments toxic. Our need is to identify these toxic comments and prevent them from being shared. Since classic AI models are not accurate in this problem, it is necessary to use machine learning to address this natural language processing task. In this paper, the proposed methods conceptually can be divided into two categories:
+With the spread of social media among people, one of the main concerns today is to keep this platform peaceful and safe for exchanging information and sharing opinions. One of the factors disrupting the peace of social media is posting and reading insulting, racist, and threatening comments. These toxic comments need to be prevented from sharing. Since classic machine learning models are not accurate in this problem, it is necessary to use large language models. I fine-tune a pre-trained language model called Bidirectional Encoder Representations from Transformers (BERT). Because the data that this model is pre-trained on includes toxic phrases. For solving this problem, previous strategies to fine-tune BERT are not accurate enough or consume a lot of memory. In this paper, my goal is to address these issues. My fine-tuning strategies conceptually can be divided into two categories:
 
 1. Sequence Learning from BERT Representations of input words
 2. Feature Extraction from BERT Representations of input words
 
-Sequence Learning is performed based on recurrent neural networks and feature extraction is done by a one-dimensional convolutional neural network (CNN). In sequence learning models we decided to enhance the output of BERT by LSTM network and to be more accurate, we added a CNN layer to them, But in Feature Extraction models, we used just CNN to extract which phrases are relevant or not from BERT representation of the corresponding sentence. Four strategies to fine-tune BERT are listed below:
+Sequence Learning is performed based on recurrent neural networks and feature extraction is done by a one-dimensional convolutional neural network (CNN). In sequence learning models I decided to enhance the output of BERT by LSTM network and to be more accurate, I added a CNN layer to them, but in feature extraction models, I used just CNN to extract which phrases are relevant or not from BERT representation of the corresponding sentence. Four strategies to fine-tune BERT are listed below:
 
 1. Sequence Learning
    - BERT+LSTM-CNN
@@ -21,7 +21,7 @@ The best model is BERT+2CNN-1D with Accuracy and F1-score of 0.94 and 0.93 respe
 ## Related Work
 
 In the work of [1], CNN was used to detect toxic comments. Their word embedding was word2vec (skip-gram). Another model was proposed in the work of [2] which is based on LSTM and word representation SpaCy. Accuracy of the model is 0.95, but they did not publish the dataset they used. Besides, we cannot be sure about the generalization of the model, because the size of their dataset was not large and they did not use transfer learning from pre-trained models. In [3], LSTM and CNN were used to detect toxic phrases. Their word representation was the output of the last hidden layer of BERT (without fine-tuning). Accuracy of both models was around 0.91 and their dataset was collected from Twitter corpus.
-Another model was proposed in [4] which adds an LSTM layer to BERT called BERT+LSTM. Furthermore, in the aforementioned paper, a model called  BERT+CNN was introduced that uses all layers of BERT and creates a 3D tensor which is the input of a CNN. The performance of BERT+CNN was better than BERT+LSTM. However, it has high memory complexity. I propose two alternatives to BERT+LSTM and two alternatives to BERT+CNN to reduce memory complexity and keep its Accuracy the same.
+Another model was proposed in [4] which adds an LSTM layer to BERT called BERT+LSTM. Furthermore, in the aforementioned paper, a model called  BERT+CNN was introduced that uses all layers of BERT and creates a 3D tensor which is the input of a CNN. The performance of BERT+CNN was better than BERT+LSTM. However, it has high memory complexity. I propose two alternatives to BERT+LSTM to improve the accuracy and two alternatives to BERT+CNN to reduce memory complexity and keep its Accuracy the same.
 BERT+LSTM | BERT+CNN
 :-------------------------:|:-------------------------:
 <img src="./Pictures/bert-lstm.png" width=350 height=400/> | <img src="./Pictures/bert-cnn.png" width=400 height=400/>
